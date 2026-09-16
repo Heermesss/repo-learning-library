@@ -8,7 +8,7 @@
     "security": "Audit edildi",
     "url": "https://github.com/NosytLabs/agent-office",
     "tags": ["Hermes", "Observability", "UI"],
-    "notes": "World Pulse observer katmanı."
+    "notes": "."
   },
   {
     "name": "JCode",
@@ -19,7 +19,7 @@
     "security": "Henüz audit edilmedi",
     "url": "https://github.com/1jehuang/jcode",
     "tags": ["Memory", "Retrieval", "Agents"],
-    "notes": "Doğrudan kurmak yerine memory mimarisindeki fikirleri değerlendirebiliriz."
+    "notes": "."
   },
   {
     "name": "Graphify",
@@ -30,7 +30,7 @@
     "security": "Audit gerekli",
     "url": "https://github.com/Graphify-Labs/graphify",
     "tags": ["Graph", "News", "Relationships"],
-    "notes": "Memory katmanından sonra ilişki katmanı olarak düşünülüyor."
+    "notes": "."
   },
   {
     "name": "Ponytail",
@@ -41,6 +41,6 @@
     "security": "Audit gerekli",
     "url": "https://github.com/DietrichGebert/ponytail",
     "tags": ["Hermes", "Efficiency", "Coding"],
-    "notes": "Production baseline tamamlanmadan kurulmamalı."
+    "notes": ""
   }
 ]
