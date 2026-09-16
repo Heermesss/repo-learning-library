@@ -7,8 +7,7 @@
     "status": "Kurulu",
     "security": "Audit edildi",
     "url": "https://github.com/NosytLabs/agent-office",
-    "tags": ["Hermes", "Observability", "UI"],
-    "notes": "."
+    "tags": ["Hermes", "Observability", "UI"]
   },
   {
     "name": "JCode",
@@ -18,8 +17,7 @@
     "status": "İnceleniyor",
     "security": "Henüz audit edilmedi",
     "url": "https://github.com/1jehuang/jcode",
-    "tags": ["Memory", "Retrieval", "Agents"],
-    "notes": "."
+    "tags": ["Memory", "Retrieval", "Agents"]
   },
   {
     "name": "Graphify",
@@ -29,8 +27,7 @@
     "status": "Planlandı",
     "security": "Audit gerekli",
     "url": "https://github.com/Graphify-Labs/graphify",
-    "tags": ["Graph", "News", "Relationships"],
-    "notes": "."
+    "tags": ["Graph", "News", "Relationships"]
   },
   {
     "name": "Ponytail",
@@ -40,7 +37,6 @@
     "status": "Test edilmedi",
     "security": "Audit gerekli",
     "url": "https://github.com/DietrichGebert/ponytail",
-    "tags": ["Hermes", "Efficiency", "Coding"],
-    "notes": ""
+    "tags": ["Hermes", "Efficiency", "Coding"]
   }
 ]
