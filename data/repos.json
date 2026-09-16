@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Agent Office",
+    "category": "Observability",
+    "purpose": "AI agentlerinin ne yaptığını uzaktan gözlemlemek.",
+    "worldPulseUse": "Hermes ve alt agent akışlarını pasif olarak izlemek.",
+    "status": "Kurulu",
+    "security": "Audit edildi",
+    "url": "https://github.com/NosytLabs/agent-office",
+    "tags": ["Hermes", "Observability", "UI"],
+    "notes": "World Pulse observer katmanı."
+  },
+  {
+    "name": "JCode",
+    "category": "Memory",
+    "purpose": "Uzun süreli agent hafızası ve ilgili geçmiş bilgiyi geri getirme.",
+    "worldPulseUse": "Semantic memory tasarımına referans; token tasarrufu için fikir kaynağı.",
+    "status": "İnceleniyor",
+    "security": "Henüz audit edilmedi",
+    "url": "https://github.com/1jehuang/jcode",
+    "tags": ["Memory", "Retrieval", "Agents"],
+    "notes": "Doğrudan kurmak yerine memory mimarisindeki fikirleri değerlendirebiliriz."
+  },
+  {
+    "name": "Graphify",
+    "category": "Knowledge Graph",
+    "purpose": "Varlıklar ve olaylar arasındaki ilişkileri graph olarak çıkarmak.",
+    "worldPulseUse": "Haberler, ülkeler, şirketler, kişiler ve olaylar arasındaki bağlantıları kurmak.",
+    "status": "Planlandı",
+    "security": "Audit gerekli",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "tags": ["Graph", "News", "Relationships"],
+    "notes": "Memory katmanından sonra ilişki katmanı olarak düşünülüyor."
+  },
+  {
+    "name": "Ponytail",
+    "category": "Agent Efficiency",
+    "purpose": "Agentin gereksiz kod ve karmaşıklık üretmesini azaltmak.",
+    "worldPulseUse": "Hermes coding işlerinde token ve kod şişmesini azaltmak için test edilebilir.",
+    "status": "Test edilmedi",
+    "security": "Audit gerekli",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "tags": ["Hermes", "Efficiency", "Coding"],
+    "notes": "Production baseline tamamlanmadan kurulmamalı."
+  }
+]
