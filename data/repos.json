@@ -20,11 +20,11 @@
   {
     "name": "Graphify",
     "category": "Knowledge Graph",
-    "purpose": "Varlıklar ve olaylar arasındaki ilişkileri graph olarak çıkarmak.",
+    "purpose": "Kod/doküman/medya ilişkilerini gerçek bir graph olarak çıkarmak; World Pulse'ta sistem graph'ı ve event/entity graph tasarımı için aday.",
     "status": "Planlandı",
-    "security": "Audit gerekli",
+    "security": "Audit gerekli; graph çıktısı türetilmiş indeks olmalı, PostgreSQL source-of-truth kalmalı. Production secrets ve credential path'leri graph input'u yapılmamalı.",
     "url": "https://github.com/Graphify-Labs/graphify",
-    "tags": ["Graph", "News", "Relationships"]
+    "tags": ["Graph", "News", "Relationships", "System Graph", "Provenance"]
   },
   {
     "name": "Ponytail",
@@ -34,6 +34,15 @@
     "security": "Audit gerekli",
     "url": "https://github.com/DietrichGebert/ponytail",
     "tags": ["Hermes", "Efficiency", "Coding"]
+  },
+  {
+    "name": "Egonex Understand Anything",
+    "category": "Repo Intelligence",
+    "purpose": "Harici GitHub repolarını multi-agent analiz ederek dosya/fonksiyon/class/dependency knowledge graph'ı, architecture ve domain/business flow çıkarır. World Pulse Repo Engineer'ın repo anlama motoru için birincil aday.",
+    "status": "Repo Engineer için staging adayı",
+    "security": "Production Hermes'e kör installer çalıştırılmamalı. Hermes entegrasyonu ~/.hermes/skills altına yazabildiği için ayrı repoengineer kullanıcısı/ortamında kurulmalı; external repo kodu çalıştırılmadan önce static audit yapılmalı.",
+    "url": "https://github.com/Egonex-AI/Understand-Anything",
+    "tags": ["Hermes", "Repo Engineer", "Knowledge Graph", "Architecture", "Domain Analysis"]
   },
   {
     "name": "Codebase Memory MCP",
