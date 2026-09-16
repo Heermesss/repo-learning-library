@@ -34,5 +34,59 @@
     "security": "Audit gerekli",
     "url": "https://github.com/DietrichGebert/ponytail",
     "tags": ["Hermes", "Efficiency", "Coding"]
+  },
+  {
+    "name": "Codebase Memory MCP",
+    "category": "Code Intelligence",
+    "purpose": "Kod tabanını AST/LSP tabanlı kalıcı knowledge graph olarak indeksleyip coding agentin dosyaları tekrar tekrar taramasını azaltmak. World Pulse runtime haber hafızası için değil, geliştirme ortamı için aday.",
+    "status": "Kod büyüyünce değerlendir",
+    "security": "Audit gerekli; installer agent config, skill ve hook dosyalarına yazabildiği için production Hermes üzerinde otomatik kurulum yapılmamalı. Gerekirse önce --skip-config ve manuel MCP entegrasyonu.",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "tags": ["MCP", "Code Graph", "Token Efficiency", "Development"]
+  },
+  {
+    "name": "Agent Reach",
+    "category": "Source Access",
+    "purpose": "X/Twitter, Reddit, YouTube, RSS, web ve diğer internet kaynaklarına agent erişimi sağlayan kanal/araç katmanı. World Pulse için özellikle X ingestion adayı.",
+    "status": "Stabil kurulum sonrası öncelikli",
+    "security": "Audit gerekli; X erişiminde auth token/ct0 gibi hassas oturum bilgileri kullanılabilir. Kimlik bilgileri n8n veya Hermes promptlarına taşınmamalı; ayrı secret boundary gerekir.",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "tags": ["X", "Twitter", "News", "Ingestion", "RSS", "Hermes"]
+  },
+  {
+    "name": "AI Skills / Behavior Skills",
+    "category": "Agent Behavior",
+    "purpose": "Persona, agent ve workflow davranışlarını SKILL.md ve typed schema yaklaşımıyla standartlaştırmak. World Pulse Scout/Analyst/Validator/Worker rolleri için tasarım referansı.",
+    "status": "Desen olarak kullanılacak",
+    "security": "Toplu/global installer kullanılmamalı. Repo Claude Code odaklı; World Pulse için yalnızca seçili davranış kalıpları incelenip Hermes-native küçük skill'lere port edilmeli.",
+    "url": "https://github.com/Arete-Consortium/ai-skills",
+    "tags": ["Skills", "Behavior", "Agents", "Scout", "Analyst", "Validator"]
+  },
+  {
+    "name": "Ohm",
+    "category": "Maintenance",
+    "purpose": "Host üzerindeki AI agent, runtime, cache, MCP ve config izlerini offline tarayıp envanter çıkarır ve manuel incelenecek cleanup scripti üretir.",
+    "status": "Opsiyonel bakım aracı",
+    "security": "Runtime bileşeni yapılmamalı; yalnızca read-only envanter/maintenance için kullanılmalı. Ürettiği cleanup scripti otomatik çalıştırılmamalı.",
+    "url": "https://github.com/derKosi/Ohm",
+    "tags": ["Inventory", "Maintenance", "Offline", "Security"]
+  },
+  {
+    "name": "Nero OSS",
+    "category": "Agent Platform",
+    "purpose": "Self-hosted agent, background projects, MCP, browser automation ve knowledge-graph memory sunan tam platform. Hermes+n8n ile büyük ölçüde çakıştığı için World Pulse'a doğrudan kurulmayacak; memory mimarisi araştırma referansı.",
+    "status": "Araştırma / kurulmayacak",
+    "security": "Production stack'e eklenmesi önerilmiyor; host-runner, Docker servisleri ve kendi persistence/queue katmanı mevcut trust boundary ile çakışır. Kod ve knowledge-graph yaklaşımı ayrı incelenebilir.",
+    "url": "https://github.com/pompeii-labs/nero-oss",
+    "tags": ["Knowledge Graph", "Memory", "MCP", "Reference Architecture"]
+  },
+  {
+    "name": "OmniRoute",
+    "category": "AI Gateway",
+    "purpose": "Çoklu model/provider routing, quota-aware fallback ve context/tool-output compression sağlayan AI gateway. World Pulse'ta önce tek non-critical worker üzerinde canary adayı.",
+    "status": "Stabil kurulum sonrası canary",
+    "security": "Yüksek blast radius: model çağrı yoluna girer ve provider credential tutar. Raw haber metninde agresif compression kullanılmamalı; önce loopback/internal bind, ayrı secrets ve fail-open/failback testleri gerekir.",
+    "url": "https://github.com/diegosouzapw/OmniRoute",
+    "tags": ["Gateway", "Routing", "Fallback", "Token Efficiency", "Models"]
   }
 ]
