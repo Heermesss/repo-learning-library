@@ -1,0 +1,138 @@
+version: 1
+project: world-pulse
+mode: post-stable-upgrade
+
+baseline_gate:
+  required: true
+  checks:
+    - hermes_healthy
+    - n8n_restart_state_ok
+    - postgres_backup_restore_ok
+    - agent_office_observability_only
+    - no_unexpected_public_listener
+    - secret_canary_pass
+    - rollback_snapshot_ready
+    - resource_baseline_recorded
+
+components:
+  repo_engineer:
+    action: BUILD
+    scope: development_plane
+    production_write: false
+    merge_permission: false
+
+  egonex_understand_anything:
+    repository: Egonex-AI/Understand-Anything
+    action: INSTALL_ISOLATED
+    scope: repoengineer_user
+    auto_installer_on_production_hermes: false
+    run_external_repo_installers: false
+
+  agent_reach:
+    repository: Panniantong/Agent-Reach
+    action: INSTALL_CANARY
+    scope: source_ingestion
+    initial_channels:
+      - x
+    x_permissions:
+      read: true
+      search: true
+      timeline: true
+      post: false
+      dm: false
+      like: false
+      follow: false
+    secrets:
+      expose_to_hermes_prompt: false
+      expose_to_n8n_workflow_json: false
+      expose_to_agent_office: false
+
+  retrieval_dedupe:
+    action: BUILD_CORE
+    source_of_truth: postgresql
+    pgvector: evaluate
+    raw_content_destructive_compression: false
+
+  world_pulse_skills:
+    action: BUILD_NATIVE
+    install_arete_bundle: false
+    reference_repository: Arete-Consortium/ai-skills
+    skills:
+      - scout
+      - analyst
+      - validator
+      - worker
+      - synthesizer
+
+  graphify:
+    repository: Graphify-Labs/graphify
+    action: PROTOTYPE
+    scope: derived_graph_plane
+    source_of_truth: false
+    first_target: world_pulse_source_and_docs
+    include_secret_paths: false
+    graphs:
+      - world_pulse_graph
+      - system_graph
+      - provenance_links
+
+  omniroute:
+    repository: diegosouzapw/OmniRoute
+    action: CANARY_ONLY
+    scope: one_non_critical_worker
+    replace_main_hermes_provider_path_initially: false
+    compression:
+      allow:
+        - terminal_logs
+        - repetitive_tool_output
+        - build_output
+        - test_output
+        - boilerplate_metadata
+      deny:
+        - raw_articles
+        - x_post_text
+        - quotes
+        - dates_numbers
+        - source_urls
+        - attribution_language
+
+  codebase_memory_mcp:
+    repository: DeusData/codebase-memory-mcp
+    action: DEFER_UNTIL_TRIGGER
+    scope: development_plane
+    trigger:
+      - large_repo
+      - excessive_grep_read_cycles
+      - cross_service_impact_analysis_problem
+      - coding_token_cost_material
+    auto_modify_agent_config_initially: false
+    preferred_first_install_flag: --skip-config
+
+  ohm:
+    repository: derKosi/Ohm
+    action: MAINTENANCE_ONLY
+    daemon: false
+    auto_execute_cleanup: false
+
+  nero:
+    repository: pompeii-labs/nero-oss
+    action: RESEARCH_ONLY
+    deploy: false
+
+change_protocol:
+  - audit
+  - stage
+  - canary
+  - measure
+  - failure_test
+  - rollback_test
+  - promote
+
+hard_denies:
+  - blind_curl_pipe_bash_on_production
+  - direct_main_merge_by_agent
+  - production_secret_to_external_repo
+  - production_docker_socket_to_repo_engineer
+  - root_repo_engineer
+  - unreviewed_public_listener
+  - simultaneous_multi_critical_component_rollout
